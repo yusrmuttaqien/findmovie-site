@@ -9,20 +9,20 @@ function _formatMetadata(res: AxiosResponse) {
 }
 
 export default function useMovieDBHome() {
-  const trendMovies = useQuery({
+  useQuery({
     queryKey: ['trendMovies'],
     queryFn: () =>
       fetchMovieDB(FetchMovieDBMethod.GET, 'trending/movie/day', null, _formatMetadata),
   });
-  const trendTVs = useQuery({
+  useQuery({
     queryKey: ['trendTVs'],
     queryFn: () => fetchMovieDB(FetchMovieDBMethod.GET, 'trending/tv/day', null, _formatMetadata),
   });
-  const discoverMovies = useQuery({
+  useQuery({
     queryKey: ['discoverMovies'],
     queryFn: () => fetchMovieDB(FetchMovieDBMethod.GET, 'discover/movie', null, _formatMetadata),
   });
-  const discoverTVs = useQuery({
+  useQuery({
     queryKey: ['discoverTVs'],
     queryFn: () => fetchMovieDB(FetchMovieDBMethod.GET, 'discover/tv', null, _formatMetadata),
   });
