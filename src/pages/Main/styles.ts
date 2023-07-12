@@ -8,7 +8,7 @@ export const Wrapper = styled.main`
   header {
     position: relative;
     padding: 0 ${({ theme }) => theme.space.x.mobile} calc(var(--_iconHeight) / 2 + 1rem);
-    margin-bottom: calc(var(--_iconHeight) / 2);
+    margin-bottom: calc(var(--_iconHeight) / 2 + 1rem);
     display: flex;
     flex-direction: column;
     justify-content: end;

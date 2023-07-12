@@ -8,6 +8,7 @@ import theme, { GlobalStyle } from 'styles/index';
 import '@fontsource/plus-jakarta-sans/200.css';
 import '@fontsource/plus-jakarta-sans/400.css';
 import '@fontsource/plus-jakarta-sans/500.css';
+import '@fontsource/plus-jakarta-sans/600.css';
 import '@fontsource/plus-jakarta-sans/800.css';
 
 const queryClient = new QueryClient();
