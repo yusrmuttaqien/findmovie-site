@@ -6,6 +6,7 @@ type SearchIconProps = {
 
 export default function SearchIcon(props: SearchIconProps) {
   return (
+    // @ts-ignore
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"

@@ -30,8 +30,6 @@
 
 - Spin up development server start <a href="#development">here</a>
 
-- A few notes regarding the live demo app <a href="#notes">here</a>
-
 <br/>
 
 ### Access the live demo following <a href="https://virtualspace-findmovie.vercel.app/">this</a> link
