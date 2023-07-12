@@ -1,6 +1,5 @@
 import NIDesktop from 'assets/nativeSVGs/NoImageDesktop.svg?url';
 import NIMobile from 'assets/nativeSVGs/NoImageMobile.svg?url';
-import theme from 'styles/index';
 import { Wrapper, Backdrop } from './styles';
 
 export default function ContentCard() {
