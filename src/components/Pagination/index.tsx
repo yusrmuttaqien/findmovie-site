@@ -7,10 +7,11 @@ type PaginationProps = {
   totalPages: number;
   handleOnJump: (page: number) => (e: React.MouseEvent<HTMLButtonElement>) => void;
   visibleCount?: number;
+  id?: string;
 };
 
 export default function Pagination(props: PaginationProps) {
-  const { className, currentPage, totalPages, handleOnJump, visibleCount = 3 } = props;
+  const { className, currentPage, totalPages, handleOnJump, visibleCount = 3, id } = props;
   const pageBuffer = Math.floor(visibleCount / 2);
   let startPage = currentPage - pageBuffer;
   let endPage = currentPage + pageBuffer;
@@ -29,7 +30,7 @@ export default function Pagination(props: PaginationProps) {
   const shouldShowEllipsisEnd = endPage < totalPages;
 
   return (
-    <Wrapper className={className}>
+    <Wrapper className={className} id={id}>
       <Button disabled={currentPage - 1 <= 0} onClick={handleOnJump(currentPage - 1)} type="button">
         <ArrowIcon />
         <p>Prev</p>

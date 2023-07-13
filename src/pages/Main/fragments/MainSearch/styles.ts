@@ -86,11 +86,11 @@ export const Group = styled.div`
 
 export const Pagination = styled(P)`
   position: sticky;
-  bottom: 0;
-  margin-top: 1rem;
+  top: 0;
   z-index: 2;
   backdrop-filter: blur(5px);
   background-color: ${({ theme }) => theme.colors.black[80]};
+  margin-top: 1rem;
 
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}px) {
     margin-top: 1.25rem;

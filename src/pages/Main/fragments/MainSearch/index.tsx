@@ -17,7 +17,7 @@ export default function MainSearch(props: MainSearchProps) {
 
     switch (true) {
       case width >= Number(theme.screen.desktop):
-        setVisibleCount(10);
+        setVisibleCount(8);
         break;
       case width >= Number(theme.screen.tablet.min):
         setVisibleCount(4);
