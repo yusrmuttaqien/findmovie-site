@@ -1,6 +1,6 @@
 import Pill from 'components/Pill';
 import Avatar from 'components/Avatar';
-import { Wrapper, ContentCard } from './styles';
+import { Wrapper /* , ContentCard */ } from './styles';
 
 export default function TVDetail() {
   return (
