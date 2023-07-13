@@ -28,7 +28,9 @@ export default function MainSearch(props: MainSearchProps) {
     }
   }
   function _handlePagination(page: number) {
-    return () => {};
+    return () => {
+      console.log(page);
+    };
   }
 
   useEffect(() => {
