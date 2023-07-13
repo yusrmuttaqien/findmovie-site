@@ -57,7 +57,11 @@ export const Link = styled(L)`
   font-weight: 600;
   margin-bottom: 0.5rem;
   display: block;
-  width: max-content;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}px) {
     font-size: 1.875rem;

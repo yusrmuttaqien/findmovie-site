@@ -1,1 +1,2 @@
-export { default as useMovieDBHome } from './useMovieDBHome';
+export { default as useFetchHome } from './useFetchHome';
+export { default as useFetchSearch } from './useFetchSearch';

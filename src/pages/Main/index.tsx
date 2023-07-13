@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import { useMovieDBHome } from 'hooks/index';
 import Footer from 'components/Footer';
 import MainExplore from './fragments/MainExplore';
 import MainSearch from './fragments/MainSearch';
@@ -23,8 +22,6 @@ export default function Main() {
       });
     }
   };
-
-  useMovieDBHome();
 
   return (
     <Wrapper>
