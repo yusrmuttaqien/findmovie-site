@@ -30,28 +30,33 @@ export const Group = styled.div`
   }
 
   #categories-wrapper {
-    position: relative;
     display: inherit;
     flex-direction: inherit;
     gap: 0.625rem;
 
-    h3 {
-      font-weight: 500;
-      font-size: 1rem;
-      position: sticky;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      backdrop-filter: blur(5px);
-      background-color: ${({ theme }) => theme.colors.black[80]};
-    }
-
-    > div {
+    #categories {
+      display: inherit;
+      flex-direction: inherit;
       position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 0.625rem;
-      z-index: 1;
+      gap: inherit;
+
+      h3 {
+        font-weight: 500;
+        font-size: 1rem;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        backdrop-filter: blur(5px);
+        background-color: ${({ theme }) => theme.colors.black[80]};
+      }
+
+      > div {
+        display: inherit;
+        flex-direction: column;
+        gap: 0.625rem;
+        z-index: 1;
+      }
     }
   }
 
@@ -71,14 +76,16 @@ export const Group = styled.div`
     #categories-wrapper {
       gap: 1.25rem;
 
-      h3 {
-        font-size: 2.125rem;
-      }
+      #categories {
+        h3 {
+          font-size: 2.125rem;
+        }
 
-      > div {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1.25rem;
+        > div {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 1.25rem;
+        }
       }
     }
   }

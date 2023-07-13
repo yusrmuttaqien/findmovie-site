@@ -7,11 +7,15 @@ type MainSearchProps = {
   query: string;
 };
 
+type MockUIEvent = {
+  target: Window;
+};
+
 export default function MainSearch(props: MainSearchProps) {
   const { query } = props;
   const [visibleCount, setVisibleCount] = useState(3);
 
-  function _handleVisibleCount(e: UIEvent) {
+  function _handleVisibleCount(e: UIEvent | MockUIEvent) {
     const target = e?.target as Window;
     const width = target.screen.width;
 
@@ -34,6 +38,7 @@ export default function MainSearch(props: MainSearchProps) {
   }
 
   useEffect(() => {
+    _handleVisibleCount({ target: window });
     window.addEventListener('resize', _handleVisibleCount);
 
     return () => window.removeEventListener('resize', _handleVisibleCount);
@@ -47,17 +52,21 @@ export default function MainSearch(props: MainSearchProps) {
           <h3>"{query}"</h3>
         </div>
         <div id="categories-wrapper">
-          <h3>Movies</h3>
-          <div>
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
+          <div id="categories">
+            <h3>Movies</h3>
+            <div>
+              <ContentCard />
+              <ContentCard />
+              <ContentCard />
+            </div>
           </div>
-          <h3>TV Series</h3>
-          <div>
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
+          <div id="categories">
+            <h3>TV Series</h3>
+            <div>
+              <ContentCard />
+              <ContentCard />
+              <ContentCard />
+            </div>
           </div>
         </div>
       </Group>
