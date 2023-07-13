@@ -15,7 +15,7 @@ export const Wrapper = styled.main`
     justify-content: end;
     gap: 2rem;
     height: calc(100vh - var(--_iconHeight) / 2 - 1rem);
-    min-height: calc(var(--_iconHeight) * 2 + 1rem);
+    min-height: calc(var(--_iconHeight) * 3 + 1rem);
     background: url(${NIDetails}) ${({ theme }) => theme.colors.white[100]};
     background-position: top center;
     background-repeat: no-repeat;
