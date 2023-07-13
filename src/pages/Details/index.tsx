@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Outlet } from 'react-router-dom';
 import { LoaderFunctionArgs, redirect, useLoaderData } from 'react-router-dom';
+import Footer from 'components/Footer';
 import { ArrowIcon } from 'assets/svgs';
 import { contentType } from 'utils/constants';
 import { Wrapper, Read, Link, Backdrop } from './styles';
@@ -68,6 +69,7 @@ export default function Details() {
         <Read onClick={_handleScroll} onKeyUp={_handleScroll} tabIndex="0" />
       </header>
       <Outlet />
+      <Footer />
     </Wrapper>
   );
 }

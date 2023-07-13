@@ -2,9 +2,15 @@ import { Wrapper, Backdrop, Link } from './styles';
 import NIDesktop from 'assets/nativeSVGs/NoImageDesktop.svg?url';
 import NIMobile from 'assets/nativeSVGs/NoImageMobile.svg?url';
 
-export default function ContentCard() {
+type ContentCardProps = {
+  className?: string;
+};
+
+export default function ContentCard(props: ContentCardProps) {
+  const { className } = props;
+
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <div id="contents">
         <p id="content-subdetail">
           <span>EN</span> • <span>2025 - 10 - 10</span>
