@@ -34,7 +34,7 @@ export default function SearchBox(props: SearchBoxProps) {
         onChange={_handleChange}
         onKeyUp={_handleSearch}
       />
-      <SearchIcon tabIndex="0" onClick={_handleSearch} />
+      <SearchIcon tabIndex="0" onClick={_handleSearch} onKeyUp={_handleSearch} />
     </Wrapper>
   );
 }

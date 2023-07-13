@@ -1,3 +1,4 @@
+import { Link as L } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface BackdropProps {
@@ -16,15 +17,6 @@ export const Wrapper = styled.figure`
 
     #content-subdetail {
       font-size: 0.75rem;
-    }
-
-    a {
-      font-size: 1.25rem;
-      text-decoration: underline;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      display: block;
-      width: max-content;
     }
 
     #content-detail {
@@ -50,16 +42,25 @@ export const Wrapper = styled.figure`
     #contents {
       margin-top: 0;
 
-      a {
-        font-size: 1.875rem;
-      }
-
       #content-detail {
         font-size: 0.9375rem;
         -webkit-line-clamp: 3;
         margin-right: 35%;
       }
     }
+  }
+`;
+
+export const Link = styled(L)`
+  font-size: 1.25rem;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+  width: max-content;
+
+  @media screen and (min-width: ${({ theme }) => theme.screen.desktop}px) {
+    font-size: 1.875rem;
   }
 `;
 

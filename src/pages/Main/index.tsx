@@ -13,13 +13,15 @@ export default function Main() {
   const debouncedSearch = debounce(setSearch, 200);
 
   const _handleSearch = (search: string) => debouncedSearch(search);
-  const _handleScroll = () => {
-    const headerHeight = headerRef.current?.getBoundingClientRect().height;
+  const _handleScroll = (e?: React.KeyboardEvent) => {
+    if (e?.key === 'Enter' || e?.type === 'click') {
+      const headerHeight = headerRef.current?.getBoundingClientRect().height;
 
-    window.scrollTo({
-      top: headerHeight,
-      behavior: 'smooth',
-    });
+      window.scrollTo({
+        top: headerHeight,
+        behavior: 'smooth',
+      });
+    }
   };
 
   useMovieDBHome();
@@ -37,7 +39,7 @@ export default function Main() {
           </p>
         </div>
         <SearchBox handleSearch={_handleSearch} isRealtime />
-        <Discover onClick={_handleScroll} />
+        <Discover onClick={_handleScroll} onKeyUp={_handleScroll} tabIndex="0" />
       </header>
       {search ? <MainSearch query={search} /> : <MainExplore />}
       <Footer />

@@ -10,7 +10,7 @@ export default function fetchMovieDB(
   config?: AxiosRequestConfig | null,
   callback?: (res: AxiosResponse) => object
 ) {
-  return axios[method](`https://api.themoviedb.org/3/${url}`, {
+  return axios[method](`${import.meta.env.VITE_MOVIEDB_BASE_API}${url}`, {
     ...config,
     params: { api_key: import.meta.env.VITE_MOVIEDB_API_KEY },
   }).then((res: AxiosResponse) => (callback ? callback(res) : res.data));

@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { AxiosResponse } from 'axios';
 import { fetchMovieDB, FetchMovieDBMethod } from 'utils/index';
+import { hooksConstant } from 'utils/constants';
 
 function _formatMetadata(res: AxiosResponse) {
   console.log(res);
@@ -9,21 +10,23 @@ function _formatMetadata(res: AxiosResponse) {
 }
 
 export default function useMovieDBHome() {
+  const { query } = hooksConstant;
+
   useQuery({
-    queryKey: ['trendMovies'],
+    queryKey: [query.trending.movies],
     queryFn: () =>
       fetchMovieDB(FetchMovieDBMethod.GET, 'trending/movie/day', null, _formatMetadata),
   });
   useQuery({
-    queryKey: ['trendTVs'],
+    queryKey: [query.trending.tvs],
     queryFn: () => fetchMovieDB(FetchMovieDBMethod.GET, 'trending/tv/day', null, _formatMetadata),
   });
   useQuery({
-    queryKey: ['discoverMovies'],
+    queryKey: [query.discover.movies],
     queryFn: () => fetchMovieDB(FetchMovieDBMethod.GET, 'discover/movie', null, _formatMetadata),
   });
   useQuery({
-    queryKey: ['discoverTVs'],
+    queryKey: [query.discover.tvs],
     queryFn: () => fetchMovieDB(FetchMovieDBMethod.GET, 'discover/tv', null, _formatMetadata),
   });
 }

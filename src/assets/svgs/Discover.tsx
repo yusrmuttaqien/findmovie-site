@@ -2,6 +2,7 @@ type DiscoverProps = {
   className?: string;
   tabIndex?: string;
   onClick?: () => void;
+  onKeyUp?: () => void;
 };
 
 export default function Discover(props: DiscoverProps) {

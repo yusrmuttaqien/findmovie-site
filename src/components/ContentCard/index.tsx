@@ -1,6 +1,6 @@
+import { Wrapper, Backdrop, Link } from './styles';
 import NIDesktop from 'assets/nativeSVGs/NoImageDesktop.svg?url';
 import NIMobile from 'assets/nativeSVGs/NoImageMobile.svg?url';
-import { Wrapper, Backdrop } from './styles';
 
 export default function ContentCard() {
   return (
@@ -9,7 +9,7 @@ export default function ContentCard() {
         <p id="content-subdetail">
           <span>EN</span> • <span>2025 - 10 - 10</span>
         </p>
-        <a href="#">Iron Man: Homecoming</a>
+        <Link to="/details/movie/11">Iron Man: Homecoming</Link>
         <p id="content-detail">
           Lorem ipsum dolor sit amet consectetur. Volutpat massa arcu curabitur enim at consectetur
           tristique. Et risus vestibulum id amet. curabitur enim at consectetur tristique. Et risus

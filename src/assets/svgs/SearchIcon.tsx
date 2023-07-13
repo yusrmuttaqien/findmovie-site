@@ -2,6 +2,7 @@ type SearchIconProps = {
   className?: string;
   tabIndex?: string;
   onClick?: () => void;
+  onKeyUp?: () => void;
 };
 
 export default function SearchIcon(props: SearchIconProps) {

@@ -3,6 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 export default {
   colors: {
     black: {
+      10: 'rgba(0, 0, 0, 0.1)',
+      30: 'rgba(0, 0, 0, 0.3)',
       50: 'rgba(0, 0, 0, 0.5)',
       80: 'rgba(0, 0, 0, 0.8)',
       100: 'rgb(0, 0, 0)',
