@@ -1,15 +1,18 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useMovieDBHome } from 'hooks/index';
-import MainExplore from './fragments/MainExplore';
 import Footer from 'components/Footer';
+import MainExplore from './fragments/MainExplore';
+import MainSearch from './fragments/MainSearch';
+import { debounce } from 'utils/index';
 import { Wrapper, SearchBox, Discover } from './styles';
 
 export default function Main() {
   const headerRef = useRef<HTMLDivElement>(null);
+  const [search, setSearch] = useState(null);
 
-  const _handleSearch = (search: string) => {
-    console.log(search);
-  };
+  const debouncedSearch = debounce(setSearch, 200);
+
+  const _handleSearch = (search: string) => debouncedSearch(search);
   const _handleScroll = () => {
     const headerHeight = headerRef.current?.getBoundingClientRect().height;
 
@@ -36,7 +39,7 @@ export default function Main() {
         <SearchBox handleSearch={_handleSearch} isRealtime />
         <Discover onClick={_handleScroll} />
       </header>
-      <MainExplore />
+      {search ? <MainSearch query={search} /> : <MainExplore />}
       <Footer />
     </Wrapper>
   );
