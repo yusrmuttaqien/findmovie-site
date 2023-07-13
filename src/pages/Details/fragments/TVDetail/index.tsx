@@ -32,9 +32,7 @@ export default function TVDetail() {
       </div>
       <div id="metadatas">
         <h3>Next episode</h3>
-        <div>
-          <ContentCard />
-        </div>
+        <div>{/* <ContentCard /> */}</div>
       </div>
       <div id="metadatas">
         <h3>Credits</h3>
