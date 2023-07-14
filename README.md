@@ -116,6 +116,7 @@ In this section, we're going to execute avaliable test cases. Following this ste
 
 - After the commands is complete, checkout `coverage/index.html` to view the report visually.
 
+<div id="notes"></div>
 <br/>
 
 ## Notes regarding testing libarary (Jest)
