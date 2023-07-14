@@ -12,9 +12,15 @@ export default function MovieDetail() {
   const production = data?.production;
   const credits = data?.credits;
   const overview = data?.overview;
+  const title = data?.title;
 
   return (
     <Wrapper>
+      <div id="metadatas">
+        <h3 data-meta="title">
+          This is <span>{title}</span>
+        </h3>
+      </div>
       {isGeneres && (
         <div id="metadatas">
           <h3>Genres</h3>

@@ -11,6 +11,10 @@ export const Wrapper = styled.section`
     h3 {
       font-weight: 500;
       font-size: 1rem;
+
+      span {
+        font-weight: 800;
+      }
     }
 
     > div {
@@ -18,13 +22,10 @@ export const Wrapper = styled.section`
       display: flex;
       flex-wrap: wrap;
       gap: 0.375rem;
-
-      p {
-        width: fit-content;
-      }
     }
 
     &:last-child p {
+      margin-top: 0.5rem;
       font-size: 0.85rem;
       font-weight: 200;
     }
@@ -45,6 +46,7 @@ export const Wrapper = styled.section`
       }
 
       &:last-child p {
+        margin-top: 1rem;
         font-size: 1.5rem;
       }
     }

@@ -10,17 +10,20 @@ export const Wrapper = styled.section`
     h3 {
       font-weight: 500;
       font-size: 1rem;
-      margin-bottom: 0.5rem;
+
+      &:not([data-meta='title']) {
+        margin-bottom: 0.5rem;
+      }
+
+      span {
+        font-weight: 800;
+      }
     }
 
     > div {
       display: flex;
       flex-wrap: wrap;
       gap: 0.375rem;
-
-      p {
-        width: fit-content;
-      }
     }
 
     &:last-child p {
@@ -36,7 +39,10 @@ export const Wrapper = styled.section`
     #metadatas {
       h3 {
         font-size: 2.125rem;
-        margin-bottom: 1rem;
+
+        &:not([data-meta='title']) {
+          margin-bottom: 1rem;
+        }
       }
 
       > div {

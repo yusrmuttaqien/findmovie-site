@@ -16,9 +16,15 @@ export default function TVDetail() {
   const episodes = data?.episodes;
   const seasons = data?.seasons;
   const latestEpisode = data?.latestEpisode as BasicMetadata;
+  const title = data?.title;
 
   return (
     <Wrapper>
+      <div id="metadatas">
+        <h3>
+          This is <span>{title}</span>
+        </h3>
+      </div>
       {isGeneres && (
         <div id="metadatas">
           <h3>Genres</h3>
