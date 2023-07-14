@@ -29,7 +29,7 @@ export function loader(e: LoaderFunctionArgs) {
   const url = e.request.url;
   let type = {};
 
-  if (url.includes(contentType.movie.raw)) {
+  if (url.includes('/' + contentType.movie.raw)) {
     type = contentType.movie;
   } else if (url.includes(contentType.tv.raw)) {
     type = contentType.tv;
