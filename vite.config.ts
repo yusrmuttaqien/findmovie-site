@@ -1,24 +1,10 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
-// import Unfonts from 'unplugin-fonts/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    // Unfonts({
-    //   fontsource: {
-    //     families: [
-    //       'Plus Jakarta Sans',
-    //       {
-    //         name: 'Plus Jakarta Sans',
-    //         weights: [200, 400, 500, 800],
-    //       },
-    //     ],
-    //   },
-    // }),
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src/'),

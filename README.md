@@ -26,13 +26,25 @@
 
 <br/>
 
+## Features
+
+- Featured & Discovery list of movies & tv series.
+
+- Search for either movie, tv series, or people.
+
+- Show more detail for movie and tv series.
+
+<br/>
+
+## Access the live demo following <a href="https://virtualspirit-findmovie.vercel.app/">this</a> link
+
+<br/>
+
 ## Starting points
 
 - Spin up development server start <a href="#development">here</a>
 
-<br/>
-
-### Access the live demo following <a href="https://virtualspace-findmovie.vercel.app/">this</a> link
+- Initiate test cases <a href="#test">here</a>
 
 <div id="development"></div>
 <br/>
@@ -44,13 +56,13 @@ In this section, we're going to spin our development server locally. Following t
 - The first thing we need to do is, clone the repository
 
     ```sh
-    git clone https://github.com/yusrmuttaqien/virtualspace-findmovie-app.git
+    git clone https://github.com/yusrmuttaqien/virtualspirit-findmovie-app.git
     ```
 
 - Go into our newly created directory by git
 
    ```sh
-   cd virtualspace-findmovie-app
+   cd virtualspirit-findmovie-app
    ```
 
 - Install all required packages listed on `packages.json`
@@ -67,7 +79,41 @@ In this section, we're going to spin our development server locally. Following t
 
 - Access the app in the browser at `http://localhost:5173/`
 
-<div id="notes"></div>
+<div id="test"></div>
+<br/>
+
+## Initiate test cases
+
+In this section, we're going to execute avaliable test cases. Following this step
+
+- The first thing we need to do is, to have clone of the repository locally, and open the directory inside terminal
+
+    ```sh
+    cd virtualspirit-findmovie-app
+    ```
+
+- Install all required packages listed on `packages.json`
+
+   ```sh
+   npm i
+   ```
+
+- After all of those texts are done spitting, as long there is no red-colored text, we're good to go, initiate all test cases
+
+   ```sh
+   npm run test
+   ```
+
+- Let it run for sometimes. At the end there will be a report regarding how many test cases is passed.
+
+- For coverage, following commands will do the tricks.
+
+   ```sh
+   npm run test:cover
+   ```
+
+- After the commands is complete, checkout `coverage/lcov-report/index.html` to view the report visually.
+
 <br/>
 
 ## Credits
