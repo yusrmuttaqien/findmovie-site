@@ -112,7 +112,7 @@ In this section, we're going to execute avaliable test cases. Following this ste
    npm run test:cover
    ```
 
-- After the commands is complete, checkout `coverage/lcov-report/index.html` to view the report visually.
+- After the commands is complete, checkout `coverage/index.html` to view the report visually.
 
 <br/>
 
