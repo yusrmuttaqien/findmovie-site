@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import P from 'components/Pagination';
+import L from 'components/Loading';
+import A from 'components/Avatar';
 
 export const Wrapper = styled.section`
   padding: 0 ${({ theme }) => theme.space.x.mobile};
@@ -17,6 +19,8 @@ export const Group = styled.div`
   #search-title {
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
+    row-gap: 0.1rem;
 
     p {
       font-size: 0.85rem;
@@ -39,6 +43,13 @@ export const Group = styled.div`
       flex-direction: inherit;
       position: relative;
       gap: inherit;
+
+      &[data-categories='people'] {
+        > div {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+      }
 
       h3 {
         font-weight: 500;
@@ -77,6 +88,12 @@ export const Group = styled.div`
       gap: 1.25rem;
 
       #categories {
+        &[data-categories='people'] {
+          > div {
+            display: flex;
+          }
+        }
+
         h3 {
           font-size: 2.125rem;
         }
@@ -102,4 +119,12 @@ export const Pagination = styled(P)`
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}px) {
     margin-top: 1.25rem;
   }
+`;
+
+export const Loading = styled(L)`
+  height: 50rem;
+`;
+
+export const Avatar = styled(A)`
+  flex-shrink: 0;
 `;

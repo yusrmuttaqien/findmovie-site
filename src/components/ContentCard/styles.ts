@@ -62,6 +62,7 @@ export const Link = styled(L)`
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  cursor: ${({ to }) => (to === '#' ? 'default' : 'pointer')};
 
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}px) {
     font-size: 1.875rem;
@@ -77,6 +78,7 @@ export const Backdrop = styled.div<BackdropProps>`
   right: -10px;
   background-image: ${({ $placeholder }) => `url(${$placeholder[1]})`};
   background-size: cover;
+  background-position: top right;
 
   img {
     transform: scale(1.1);
@@ -103,6 +105,7 @@ export const Backdrop = styled.div<BackdropProps>`
 
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}px) {
     background-image: ${({ $placeholder }) => `url(${$placeholder[0]})`};
+    background-position: right center;
 
     &::after {
       background: linear-gradient(

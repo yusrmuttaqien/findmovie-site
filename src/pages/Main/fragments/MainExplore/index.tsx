@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { useFetchHome } from 'hooks/index';
 import ContentCard from 'components/ContentCard';
-import { Wrapper, Group } from './styles';
+import { Wrapper, Group, Loading } from './styles';
 
 export default function MainExplore() {
   const { isLoading, data } = useFetchHome();
@@ -12,12 +12,12 @@ export default function MainExplore() {
 
   return (
     <Wrapper>
-      {isLoading ? (
-        <p>loading...</p>
-      ) : (
-        <Fragment>
-          <Group>
-            <h2>Now Trending</h2>
+      <Fragment>
+        <Group>
+          <h2>Now Trending</h2>
+          {isLoading ? (
+            <Loading />
+          ) : (
             <div id="categories-wrapper">
               <div id="categories">
                 <h3>Movies</h3>
@@ -36,9 +36,13 @@ export default function MainExplore() {
                 </div>
               </div>
             </div>
-          </Group>
-          <Group>
-            <h2>Discover</h2>
+          )}
+        </Group>
+        <Group>
+          <h2>Discover</h2>
+          {isLoading ? (
+            <Loading />
+          ) : (
             <div id="categories-wrapper">
               <div id="categories">
                 <h3>Movies</h3>
@@ -57,9 +61,9 @@ export default function MainExplore() {
                 </div>
               </div>
             </div>
-          </Group>
-        </Fragment>
-      )}
+          )}
+        </Group>
+      </Fragment>
     </Wrapper>
   );
 }

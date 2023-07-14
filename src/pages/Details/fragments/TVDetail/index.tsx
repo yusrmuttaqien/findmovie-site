@@ -8,6 +8,7 @@ export default function TVDetail() {
   const { data } = useDetails();
   const isOverview = data?.overview;
   const isProduction = data?.production?.length || 0 > 0;
+  const isGeneres = data?.genres?.length || 0 > 0;
   const genres = data?.genres;
   const production = data?.production;
   const credits = data?.credits;
@@ -18,14 +19,16 @@ export default function TVDetail() {
 
   return (
     <Wrapper>
-      <div id="metadatas">
-        <h3>Genres</h3>
-        <div>
-          {genres?.map((genre, key) => (
-            <Pill key={key}>{genre}</Pill>
-          ))}
+      {isGeneres && (
+        <div id="metadatas">
+          <h3>Genres</h3>
+          <div>
+            {genres?.map((genre, key) => (
+              <Pill key={key}>{genre}</Pill>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       {isProduction && (
         <div id="metadatas">
           <h3>Production of</h3>

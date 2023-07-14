@@ -19,7 +19,7 @@ export default function ContentCard(props: FusionProps) {
         <p id="content-subdetail">
           <span>{lang}</span> • <span>{date}</span>
         </p>
-        <Link to={`/details/${type}/${id}`} title={title}>
+        <Link to={id ? `/details/${type}/${id}` : '#'} title={title}>
           {title}
         </Link>
         <p id="content-detail" title={overview}>

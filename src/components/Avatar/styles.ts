@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.figure`
   --_dimensions: 2.5rem;
-  background-color: red;
   height: var(--_dimensions);
   width: var(--_dimensions);
   border-radius: 50%;

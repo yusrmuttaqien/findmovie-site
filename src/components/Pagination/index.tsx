@@ -10,37 +10,69 @@ type PaginationProps = {
   id?: string;
 };
 
+function generatePagination(currentPage: number, totalPage: number, visibleCount: number) {
+  const pages: number[] = [];
+  let showEllipsisStart = false;
+  let showEllipsisEnd = false;
+
+  if (totalPage === 0) {
+    return { pages, showEllipsisStart, showEllipsisEnd }; // Return empty array and no ellipsis when totalPage is 0
+  }
+
+  showEllipsisStart = currentPage - Math.floor(visibleCount / 2) > 1;
+  showEllipsisEnd = currentPage + Math.floor(visibleCount / 2) < totalPage;
+
+  const halfVisibleCount = Math.floor(visibleCount / 2);
+  let startPage = currentPage - halfVisibleCount;
+  let endPage = currentPage + halfVisibleCount;
+
+  if (showEllipsisStart && showEllipsisEnd) {
+    startPage = currentPage - halfVisibleCount + 1;
+    endPage = currentPage + halfVisibleCount - 1;
+  } else if (showEllipsisStart) {
+    startPage = currentPage - halfVisibleCount + 2;
+    endPage = currentPage + halfVisibleCount;
+  } else if (showEllipsisEnd) {
+    startPage = currentPage - halfVisibleCount;
+    endPage = currentPage + halfVisibleCount - 2;
+  }
+
+  if (startPage <= 0) {
+    startPage = 1;
+    endPage = Math.min(visibleCount, totalPage);
+  }
+
+  if (endPage > totalPage) {
+    endPage = totalPage;
+    startPage = Math.max(1, totalPage - visibleCount + 1);
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(i);
+  }
+
+  return { pages, showEllipsisStart, showEllipsisEnd };
+}
+
 export default function Pagination(props: PaginationProps) {
   const { className, currentPage, totalPages, handleOnJump, visibleCount = 3, id } = props;
-  const pageBuffer = Math.floor(visibleCount / 2);
-  let startPage = currentPage - pageBuffer;
-  let endPage = currentPage + pageBuffer;
-
-  if (startPage < 1) {
-    endPage += Math.abs(startPage) + 1;
-    startPage = 1;
-  }
-  if (endPage > totalPages) {
-    startPage -= endPage - totalPages;
-    endPage = totalPages;
-  }
-
-  const pageNumbers = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
-  const shouldShowEllipsisStart = startPage > 1;
-  const shouldShowEllipsisEnd = endPage < totalPages;
+  const { pages, showEllipsisEnd, showEllipsisStart } = generatePagination(
+    currentPage,
+    totalPages,
+    visibleCount
+  );
 
   return (
     <Wrapper className={className} id={id}>
-      <Button disabled={currentPage - 1 <= 0} onClick={handleOnJump(currentPage - 1)} type="button">
+      <Button disabled={currentPage - 1 <= 0} onClick={handleOnJump(1)} type="button">
         <ArrowIcon />
-        <p>Prev</p>
       </Button>
-      {shouldShowEllipsisStart && (
+      {showEllipsisStart && (
         <Button disabled type="button">
           <p>...</p>
         </Button>
       )}
-      {pageNumbers.map((i, key) => (
+      {pages.map((i, key) => (
         <Button
           $isActive={i === currentPage}
           disabled={i === currentPage}
@@ -51,18 +83,17 @@ export default function Pagination(props: PaginationProps) {
           <p>{i}</p>
         </Button>
       ))}
-      {shouldShowEllipsisEnd && (
+      {showEllipsisEnd && (
         <Button disabled type="button">
           <p>...</p>
         </Button>
       )}
       <Button
         disabled={currentPage + 1 > totalPages}
-        onClick={handleOnJump(currentPage + 1)}
+        onClick={handleOnJump(totalPages)}
         type="button"
       >
         <ArrowIcon />
-        <p>Next</p>
       </Button>
     </Wrapper>
   );

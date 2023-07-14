@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import Footer from 'components/Footer';
+import ScrollToTop from 'components/ScrollToTop';
 import MainExplore from './fragments/MainExplore';
 import MainSearch from './fragments/MainSearch';
 import { debounce } from 'utils/index';
@@ -35,11 +36,12 @@ export default function Main() {
             </a>
           </p>
         </div>
-        <SearchBox handleSearch={_handleSearch} isRealtime />
+        <SearchBox handleSearch={_handleSearch} isRealtime id="search-multi" />
         <Discover onClick={_handleScroll} onKeyUp={_handleScroll} tabIndex="0" />
       </header>
       {search ? <MainSearch query={search} /> : <MainExplore />}
       <Footer />
+      <ScrollToTop />
     </Wrapper>
   );
 }

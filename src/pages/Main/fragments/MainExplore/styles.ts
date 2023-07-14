@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import L from 'components/Loading';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -81,4 +82,8 @@ export const Group = styled.div`
       }
     }
   }
+`;
+
+export const Loading = styled(L)`
+  height: 10rem;
 `;

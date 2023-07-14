@@ -15,11 +15,18 @@ type ExpectedData = {
   name: string;
   original_name: string;
   first_air_date: string;
-  media_type?: 'movie' | 'tv' | 'person';
+  media_type: 'movie' | 'tv' | 'person';
+};
+
+type ExpectedPersonData = {
+  name: string;
+  known_for_department?: string;
+  profile_path: string;
+  character?: string;
 };
 
 export type BasicMetadata = {
-  id?: number;
+  id: number;
   title: string;
   backdrop: string;
   overview: string;
@@ -39,8 +46,8 @@ export type DetailsMetadata = {
     character: string;
     profile: string;
   }[];
-  episodes?: number;
-  seasons?: number;
+  episodes: number;
+  seasons: number;
   latestEpisode?: BasicMetadata;
 };
 
@@ -59,10 +66,18 @@ function collectBasicData(data: ExpectedData[]) {
   return data.map((d) => ({
     id: d.id,
     title: d.title || d.original_title || d.name || d.original_name,
-    backdrop: constructPath(d.backdrop_path),
+    backdrop: constructPath(d.backdrop_path || ''),
     overview: d.overview,
-    lang: d.original_language.toUpperCase(),
+    lang: d.original_language?.toUpperCase(),
     date: d.release_date || d.first_air_date,
+  }));
+}
+
+function collectPersonBasicData(data: ExpectedPersonData[]) {
+  return data.map((d) => ({
+    name: d.name,
+    character: d.character || d.known_for_department,
+    profile: constructPath(d.profile_path || 'null'),
   }));
 }
 
@@ -107,22 +122,30 @@ export function fetchHome(count: number = 6) {
 export function fetchSearch(query: string, page: number) {
   return fetchMDB(Method.GET, 'search/multi', { params: { query, page } }).then(({ data }) => {
     let movie: ExpectedData[] = [],
-      tv: ExpectedData[] = [];
+      tv: ExpectedData[] = [],
+      people: ExpectedPersonData[] = [];
     const pagination = {
       page: data.page,
       totalPages: data.total_pages,
       totalResults: data.total_results,
     };
 
-    data.results.forEach((d: ExpectedData) => {
+    data.results.forEach((d: ExpectedData & ExpectedPersonData) => {
       if (d.media_type === 'movie') {
         movie.push(d);
       } else if (d.media_type === 'tv') {
         tv.push(d);
+      } else if (d.media_type === 'person') {
+        people.push(d);
       }
     });
 
-    return { pagination, movie: collectBasicData(movie), tv: collectBasicData(tv) };
+    return {
+      pagination,
+      movie: collectBasicData(movie),
+      tv: collectBasicData(tv),
+      people: collectPersonBasicData(people),
+    };
   });
 }
 
@@ -152,13 +175,7 @@ export function fetchDetails(id: string, type: string) {
       overview: data.overview,
       genres: data.genres.map((g: { name: string }) => g.name),
       production: data.production_companies.map((p: { name: string }) => p.name),
-      credits: credits.data.cast
-        .splice(0, 10)
-        .map((c: { name: string; character: string; profile_path: string }) => ({
-          name: c.name,
-          character: c.character,
-          profile: constructPath(c.profile_path),
-        })),
+      credits: collectPersonBasicData(credits.data.cast.splice(0, 10)),
       ...tvs,
     };
   });

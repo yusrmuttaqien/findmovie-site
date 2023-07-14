@@ -5,10 +5,11 @@ type SearchBoxProps = {
   className?: string;
   handleSearch?: (search: string) => void;
   isRealtime?: boolean;
+  id?: string;
 };
 
 export default function SearchBox(props: SearchBoxProps) {
-  const { className, handleSearch, isRealtime } = props;
+  const { className, handleSearch, isRealtime, id } = props;
   const [search, setSearch] = useState('');
 
   const _handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +26,7 @@ export default function SearchBox(props: SearchBoxProps) {
   };
 
   return (
-    <Wrapper className={className}>
+    <Wrapper className={className} id={id}>
       <input
         type="text"
         name="search"

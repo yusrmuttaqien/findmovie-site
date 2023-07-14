@@ -4,16 +4,13 @@ interface ButtonProps {
   readonly $isActive?: boolean;
 }
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
 export const Button = styled.button<ButtonProps>`
-  display: inherit;
-  align-items: center;
   color: ${({ theme }) => theme.colors.white[50]};
-  gap: 0.5rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
