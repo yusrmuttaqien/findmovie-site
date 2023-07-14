@@ -23,27 +23,26 @@ vi.mock('components/Footer', () => ({ default: vi.fn(() => <footer />) }));
 vi.mock('components/ScrollToTop', () => ({ default: vi.fn(() => null) }));
 
 describe('Main page index', () => {
-  test('should render default as intended', () => {
+  test('should render MainExplore as default', () => {
     render(<Main />);
 
-    expect(screen.getByText('Find Movies')).toBeDefined();
     expect(screen.getByText('MainExplore')).toBeDefined();
   });
-  test('should render MainSearch', () => {
-    vi.mocked(useState).mockReturnValueOnce([true, vi.fn()]);
-    render(<Main />);
-
-    expect(screen.getByText('MainSearch')).toBeDefined();
-  });
-  test('should set new value to search state', () => {
-    const setSearch = vi.fn();
-    vi.mocked(useState).mockImplementationOnce(() => [null, setSearch]);
-    vi.mocked(debounce).mockImplementationOnce((a) => (v) => a(v));
-    render(<Main />);
+  test('should set new value and render MainSearch if there is query', () => {
+    let searchQuery: string | null = null;
+    const setSearch = vi.fn((q) => (searchQuery = q));
+    vi.mocked(useState).mockImplementation(() => [searchQuery, setSearch]);
+    vi.mocked(debounce).mockImplementationOnce((a) => () => a('test'));
+    const { rerender } = render(<Main />);
 
     const searchBox = screen.getByTestId('search-box');
     fireEvent.click(searchBox);
-    expect(setSearch).toBeCalled();
+    expect(setSearch).toBeCalledWith('test');
+
+    rerender(<Main />);
+
+    expect(screen.getByText('MainSearch')).toBeDefined();
+    expect(searchQuery).toBe('test');
   });
   test('should scroll to content on mouse click or keyboard enter', () => {
     const scrollTo = vi.fn();
@@ -54,5 +53,14 @@ describe('Main page index', () => {
     fireEvent.click(discover);
     fireEvent.keyUp(discover, { key: 'Enter' });
     expect(scrollTo).toBeCalledTimes(2);
+  });
+  test('should not scroll to content keyboard not enter', () => {
+    const scrollTo = vi.fn();
+    global.scrollTo = scrollTo;
+    render(<Main />);
+
+    const discover = screen.getByTestId('discover');
+    fireEvent.keyUp(discover, { key: 'Escape' });
+    expect(scrollTo).toBeCalledTimes(0);
   });
 });

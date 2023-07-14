@@ -1,0 +1,126 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Main page fragment: MainExplore styles > styled components should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.875rem;
+  gap: 2.25rem;
+}
+
+@media screen and (min-width: 1279px) {
+  .c0 {
+    padding: 0 5.5rem;
+    gap: 4.625rem;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+
+}
+
+<section
+    class="c0"
+  />
+</DocumentFragment>
+`;
+
+exports[`Main page fragment: MainExplore styles > styled components should match snapshot 2`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+}
+
+.c0 h2 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.c0 #categories-wrapper {
+  display: inherit;
+  flex-direction: inherit;
+  gap: 0.625rem;
+}
+
+.c0 #categories-wrapper #categories {
+  position: relative;
+}
+
+.c0 #categories-wrapper #categories h3 {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.625rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.c0 #categories-wrapper #categories >div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1279px) {
+
+}
+
+@media screen and (min-width: 1279px) {
+  .c0 {
+    gap: 2rem;
+  }
+
+  .c0 h2 {
+    font-size: 4rem;
+  }
+
+  .c0 #categories-wrapper {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+
+  .c0 #categories-wrapper #categories {
+    flex: 1;
+  }
+
+  .c0 #categories-wrapper #categories h3 {
+    font-size: 2.125rem;
+    margin-bottom: 2.125rem;
+  }
+
+  .c0 #categories-wrapper #categories:nth-child(2) h3 {
+    text-align: right;
+  }
+
+  .c0 #categories-wrapper #categories >div {
+    gap: 1rem;
+  }
+}
+
+<div
+    class="c0"
+  />
+</DocumentFragment>
+`;
+
+exports[`Main page fragment: MainExplore styles > styled components should match snapshot 3`] = `
+<DocumentFragment>
+  @media screen and (min-width: 1279px) {
+
+}
+
+@media screen and (min-width: 1279px) {
+
+}
+
+<div />
+</DocumentFragment>
+`;
