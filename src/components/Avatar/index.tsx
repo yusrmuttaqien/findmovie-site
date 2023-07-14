@@ -1,9 +1,17 @@
 import { Wrapper } from './styles';
 
-export default function Avatar() {
+type AvatarProps = {
+  name: string;
+  character: string;
+  profile: string;
+};
+
+export default function Avatar(props: AvatarProps) {
+  const { name, character, profile } = props;
+
   return (
     <Wrapper>
-      <img src="https://images.unsplash.com/photo-1417325384643-aac51acc9e5d" alt="avatar-name" />
+      <img src={profile} alt={name} title={`${name} - ${character}`} />
     </Wrapper>
   );
 }

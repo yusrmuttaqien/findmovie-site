@@ -12,7 +12,6 @@ export const Wrapper = styled.main`
     margin-bottom: calc(var(--_iconHeight) / 2 + 1rem);
     display: flex;
     flex-direction: column;
-    justify-content: end;
     gap: 2rem;
     height: calc(100vh - var(--_iconHeight) / 2 - 1rem);
     min-height: calc(var(--_iconHeight) * 3 + 1rem);
@@ -27,7 +26,7 @@ export const Wrapper = styled.main`
       }
 
       h1 {
-        font-size: 4.1875rem;
+        font-size: 3.1875rem;
         line-height: 92%;
         word-wrap: break-word;
         z-index: 1;
@@ -57,7 +56,7 @@ export const Wrapper = styled.main`
         align-self: flex-end;
 
         h1 {
-          font-size: 11.15rem;
+          font-size: 8.15rem;
         }
 
         p {

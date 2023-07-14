@@ -19,12 +19,29 @@ type ExpectedData = {
 };
 
 export type BasicMetadata = {
-  id: number;
+  id?: number;
   title: string;
   backdrop: string;
   overview: string;
   lang: string;
   date: string;
+};
+
+export type DetailsMetadata = {
+  id: string;
+  title: string;
+  backdrop: string;
+  overview: string;
+  genres: string[];
+  production: string[];
+  credits: {
+    name: string;
+    character: string;
+    profile: string;
+  }[];
+  episodes?: number;
+  seasons?: number;
+  latestEpisode?: BasicMetadata;
 };
 
 function fetchMDB(method: Method, url: string, config?: AxiosRequestConfig | null) {
@@ -106,5 +123,43 @@ export function fetchSearch(query: string, page: number) {
     });
 
     return { pagination, movie: collectBasicData(movie), tv: collectBasicData(tv) };
+  });
+}
+
+export function fetchDetails(id: string, type: string) {
+  return fetchMDB(Method.GET, `${type}/${id}`).then(async ({ data }) => {
+    const credits = await fetchMDB(Method.GET, `${type}/${id}/credits`);
+    let tvs = {};
+
+    if (type === 'tv') {
+      tvs = {
+        episodes: data.number_of_episodes,
+        seasons: data.number_of_seasons,
+        latestEpisode: {
+          title: data.last_episode_to_air.name,
+          backdrop: constructPath(data.last_episode_to_air.still_path),
+          overview: data.last_episode_to_air.overview,
+          lang: data.original_language.toUpperCase(),
+          date: data.last_episode_to_air.air_date,
+        },
+      };
+    }
+
+    return {
+      id: data.id,
+      title: data.title || data.original_title || data.name || data.original_name,
+      backdrop: constructPath(data.backdrop_path),
+      overview: data.overview,
+      genres: data.genres.map((g: { name: string }) => g.name),
+      production: data.production_companies.map((p: { name: string }) => p.name),
+      credits: credits.data.cast
+        .splice(0, 10)
+        .map((c: { name: string; character: string; profile_path: string }) => ({
+          name: c.name,
+          character: c.character,
+          profile: constructPath(c.profile_path),
+        })),
+      ...tvs,
+    };
   });
 }

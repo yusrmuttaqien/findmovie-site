@@ -11,6 +11,7 @@ export const Wrapper = styled.figure`
   img {
     height: var(--_dimensions);
     width: var(--_dimensions);
+    object-fit: cover;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}px) {

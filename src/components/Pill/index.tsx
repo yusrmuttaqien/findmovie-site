@@ -1,9 +1,11 @@
 import { Wrapper } from './styles';
 
-export default function Pill() {
+export default function Pill(props: { children: string }) {
+  const { children } = props;
+
   return (
     <Wrapper>
-      <p>Marvel Action</p>
+      <p>{children}</p>
     </Wrapper>
   );
 }
