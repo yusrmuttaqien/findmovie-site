@@ -52,6 +52,8 @@ export const Wrapper = styled.section`
 `;
 
 export const ContentCard = styled(CC)`
+  width: 100%;
+
   @media screen and (min-width: ${({ theme }) => theme.screen.desktop}px) {
     width: calc(50% - ${({ theme }) => theme.space.x.desktop});
   }
