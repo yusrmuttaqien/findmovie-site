@@ -46,6 +46,8 @@
 
 - Initiate test cases <a href="#test">here</a>
 
+- Notes regarding testing library (Jest) <a href="#notes">here</a>
+
 <div id="development"></div>
 <br/>
 
@@ -113,6 +115,12 @@ In this section, we're going to execute avaliable test cases. Following this ste
    ```
 
 - After the commands is complete, checkout `coverage/index.html` to view the report visually.
+
+<br/>
+
+## Notes regarding testing libarary (Jest)
+
+Due to numerous incompatibilities between [Jest](https://jestjs.io/) and the [Vite.js](https://vitejs.dev/) framework, I have switched to using [Vitest](https://vitest.dev/) as my testing library. Vitest offers a one-to-one function mapping with Jest, ensuring a smooth transition between the two libraries. Nonetheless, I still rely on the [React Testing Library](https://testing-library.com/) for component rendering.
 
 <br/>
 
