@@ -1,6 +1,6 @@
 import { describe, test, expect, vi } from 'vitest';
 import { render } from '@testing-library/react';
-import { Wrapper, Group, Loading } from 'pages/Main/fragments/MainExplore/styles';
+import { Wrapper, Group, Loading } from '../styles';
 import theme from 'styles/index';
 import 'jest-styled-components';
 

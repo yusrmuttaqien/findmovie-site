@@ -8,7 +8,7 @@ type ContentCardProps = {
   type: 'movie' | 'tv';
 };
 
-type FusionProps = BasicMetadata & ContentCardProps;
+export type FusionProps = BasicMetadata & ContentCardProps;
 
 export default function ContentCard(props: FusionProps) {
   const { className, backdrop, date, id, lang, overview, title, type } = props;

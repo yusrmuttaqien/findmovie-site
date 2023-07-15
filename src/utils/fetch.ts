@@ -26,7 +26,7 @@ type ExpectedPersonData = {
 };
 
 export type BasicMetadata = {
-  id: number;
+  id?: number;
   title: string;
   backdrop: string;
   overview: string;

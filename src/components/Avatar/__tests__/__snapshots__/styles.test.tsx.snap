@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Avatar component styles > styled components should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  --_dimensions: 2.5rem;
+  height: var(--_dimensions);
+  width: var(--_dimensions);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c0 img {
+  height: var(--_dimensions);
+  width: var(--_dimensions);
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1279px) {
+  .c0 {
+    --_dimensions: 4rem;
+  }
+}
+
+<figure
+    class="c0"
+  />
+</DocumentFragment>
+`;

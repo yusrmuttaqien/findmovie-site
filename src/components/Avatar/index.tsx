@@ -1,10 +1,10 @@
 import NIAvatar from 'assets/nativeSVGs/NoImageAvatar.svg';
 import { Wrapper } from './styles';
 
-type AvatarProps = {
+export type AvatarProps = {
   name: string;
   character?: string;
-  profile: string;
+  profile?: string;
 };
 
 export default function Avatar(props: AvatarProps) {

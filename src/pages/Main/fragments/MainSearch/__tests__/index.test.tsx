@@ -103,7 +103,7 @@ describe('Main page fragment: MainSearch index', () => {
 
     expect(scrollTo).toBeCalledTimes(2);
   });
-  test('should not hit windows.scrollTo when using pagination', () => {
+  test('should not hit window.scrollTo when using pagination', () => {
     let refValue = {};
     const setCurrentPage = vi.fn();
     vi.mocked(useRef).mockImplementation(() => refValue as React.MutableRefObject<string>);

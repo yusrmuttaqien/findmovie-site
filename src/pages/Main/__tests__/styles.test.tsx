@@ -1,6 +1,6 @@
 import { describe, test, expect, vi } from 'vitest';
 import { render } from '@testing-library/react';
-import { Wrapper, Discover, SearchBox } from 'pages/Main/styles';
+import { Wrapper, Discover, SearchBox } from '../styles';
 import theme from 'styles/index';
 import 'jest-styled-components';
 

@@ -4,7 +4,7 @@ import { Wrapper } from '../styles';
 import theme from 'styles/index';
 import 'jest-styled-components';
 
-describe('Error page styles', () => {
+describe('Loading component styles', () => {
   test('styled components should match snapshot', () => {
     const { asFragment: fWrapper } = render(<Wrapper theme={theme} />);
 

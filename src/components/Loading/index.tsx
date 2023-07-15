@@ -1,4 +1,4 @@
-import { Wrapper } from './styled';
+import { Wrapper } from './styles';
 
 type LoadingProps = {
   className?: string;
