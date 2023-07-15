@@ -1,4 +1,4 @@
-import { describe, test, expect, vi } from 'vitest';
+import { describe, test, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import { Wrapper, SearchIcon } from '../styles';
 import theme from 'styles/index';
