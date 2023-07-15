@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import { describe, expect, test, vi } from 'vitest';
 import { render, fireEvent, screen } from '@testing-library/react';
 import SearchBox from '..';
 
-vi.mock('react');
 vi.mock('components/SearchBox/styles', () => ({
   Wrapper: vi.fn(({ children }) => <div>{children}</div>),
   SearchIcon: vi.fn(({ onClick }) => <svg data-testid="search-icon" onClick={onClick} />),
