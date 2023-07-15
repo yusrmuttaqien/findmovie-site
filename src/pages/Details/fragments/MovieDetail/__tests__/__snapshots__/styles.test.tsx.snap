@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Details page fragment: MovieDetail styles > styled components should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+  padding: 0 1.875rem;
+}
+
+.c0 #metadatas h3 {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.c0 #metadatas h3:not([data-meta='title']) {
+  margin-bottom: 0.5rem;
+}
+
+.c0 #metadatas h3 span {
+  font-weight: 800;
+}
+
+.c0 #metadatas >div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.c0 #metadatas:last-child p {
+  font-size: 0.85rem;
+  font-weight: 200;
+}
+
+@media screen and (min-width: 1279px) {
+  .c0 {
+    gap: 2rem;
+    padding: 0 5.5rem;
+  }
+
+  .c0 #metadatas h3 {
+    font-size: 2.125rem;
+  }
+
+  .c0 #metadatas h3:not([data-meta='title']) {
+    margin-bottom: 1rem;
+  }
+
+  .c0 #metadatas >div {
+    gap: 0.625rem;
+  }
+
+  .c0 #metadatas:last-child p {
+    font-size: 1.5rem;
+  }
+}
+
+<section
+    class="c0"
+  />
+</DocumentFragment>
+`;

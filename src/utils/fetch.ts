@@ -38,7 +38,7 @@ export type DetailsMetadata = {
   id: string;
   title: string;
   backdrop: string;
-  overview: string;
+  overview?: string;
   genres: string[];
   production: string[];
   credits: {
@@ -46,8 +46,8 @@ export type DetailsMetadata = {
     character: string;
     profile: string;
   }[];
-  episodes: number;
-  seasons: number;
+  episodes?: number;
+  seasons?: number;
   latestEpisode?: BasicMetadata;
 };
 
@@ -177,6 +177,6 @@ export function fetchDetails(id: string, type: string) {
       production: data.production_companies.map((p: { name: string }) => p.name),
       credits: collectPersonBasicData(credits.data.cast.splice(0, 10)),
       ...tvs,
-    };
+    } as DetailsMetadata;
   });
 }
