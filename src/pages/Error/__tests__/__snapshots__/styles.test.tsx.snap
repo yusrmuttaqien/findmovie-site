@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Error page styles > styled components should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 1279px) {
+  .c0 {
+    font-size: 2rem;
+  }
+}
+
+<main
+    class="c0"
+  />
+</DocumentFragment>
+`;

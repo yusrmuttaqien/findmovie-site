@@ -10,5 +10,7 @@ export default function Error() {
 
   if (status === 404) {
     return <Wrapper>404 • Page not found</Wrapper>;
+  } else {
+    return <Wrapper>{status}</Wrapper>;
   }
 }
