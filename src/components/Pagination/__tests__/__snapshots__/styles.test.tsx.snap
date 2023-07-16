@@ -1,0 +1,150 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Pagination component styles > styled components should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1279px) {
+
+}
+
+@media screen and (min-width: 1279px) {
+
+}
+
+<div
+    class="c0"
+  />
+</DocumentFragment>
+`;
+
+exports[`Pagination component styles > styled components should match snapshot 2`] = `
+<DocumentFragment>
+  .c0 {
+  color: rgba(199, 199, 199, 0.5);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.c0 p,
+.c0 svg {
+  transition: color 0.1s ease-in-out;
+}
+
+.c0 p {
+  font-size: 1.0625rem;
+}
+
+.c0 svg {
+  font-size: 1.25rem;
+}
+
+.c0:last-child {
+  flex-direction: row-reverse;
+}
+
+.c0:last-child svg {
+  transform: rotate(180deg);
+}
+
+.c0:hover p,
+.c0:hover svg {
+  color: rgb(199, 199, 199);
+}
+
+.c0:disabled {
+  cursor: no-drop;
+}
+
+.c0:disabled p,
+.c0:disabled svg {
+  color: rgba(199, 199, 199, 0.3);
+}
+
+@media screen and (min-width: 1279px) {
+  .c0 p {
+    font-size: 1.75rem;
+  }
+
+  .c0 svg {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+
+}
+
+<button
+    class="c0"
+  />
+</DocumentFragment>
+`;
+
+exports[`Pagination component styles > styled components should match snapshot 3`] = `
+<DocumentFragment>
+  .c0 {
+  color: rgba(199, 199, 199, 0.5);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.c0 p,
+.c0 svg {
+  transition: color 0.1s ease-in-out;
+}
+
+.c0 p {
+  font-size: 1.0625rem;
+}
+
+.c0 svg {
+  font-size: 1.25rem;
+}
+
+.c0:last-child {
+  flex-direction: row-reverse;
+}
+
+.c0:last-child svg {
+  transform: rotate(180deg);
+}
+
+.c0:hover p,
+.c0:hover svg {
+  color: rgb(199, 199, 199);
+}
+
+.c0:disabled {
+  cursor: no-drop;
+}
+
+.c0:disabled p,
+.c0:disabled svg {
+  color: rgb(199, 199, 199);
+}
+
+@media screen and (min-width: 1279px) {
+
+}
+
+@media screen and (min-width: 1279px) {
+  .c0 p {
+    font-size: 1.75rem;
+  }
+
+  .c0 svg {
+    font-size: 2rem;
+  }
+}
+
+<button
+    class="c0"
+  />
+</DocumentFragment>
+`;

@@ -54,7 +54,7 @@ describe('Main page index', () => {
     fireEvent.keyUp(discover, { key: 'Enter' });
     expect(scrollTo).toBeCalledTimes(2);
   });
-  test('should not scroll to content keyboard not enter', () => {
+  test('should not scroll to content when keyboard not enter', () => {
     const scrollTo = vi.fn();
     global.scrollTo = scrollTo;
     render(<Main />);

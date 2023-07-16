@@ -1,6 +1,12 @@
 import { useRef, useEffect } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
-import { LoaderFunctionArgs, redirect, useLoaderData, useOutletContext } from 'react-router-dom';
+import {
+  Outlet,
+  useNavigate,
+  LoaderFunctionArgs,
+  redirect,
+  useLoaderData,
+  useOutletContext,
+} from 'react-router-dom';
 import { useFetchDetails } from 'hooks/index';
 import Footer from 'components/Footer';
 import ScrollToTop from 'components/ScrollToTop';
