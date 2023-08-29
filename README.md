@@ -2,7 +2,7 @@
 <div align="center">
   <img src="public/favicon.svg" alt="Logo" width="100" height="100">
 
-  <h3 align="center">VirtualSpirit FindMovie app</h3>
+  <h3 align="center">FindMovie</h3>
 
   <p align="center">
     Search and view app utilizing TheMovieDB API
