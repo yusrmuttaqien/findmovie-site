@@ -36,7 +36,7 @@
 
 <br/>
 
-## Access the live demo following <a href="https://virtualspirit-findmovie.vercel.app/">this</a> link
+## Access the live demo following <a href="https://findmovie-yusr.vercel.app/">this</a> link
 
 <br/>
 
