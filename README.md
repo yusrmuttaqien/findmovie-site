@@ -127,4 +127,4 @@ Due to numerous incompatibilities between [Jest](https://jestjs.io/) and the [Vi
 
 ## Credits
 
-### <a href="https://github.com/yusrmuttaqien">Yusril Muttaqien</a> - 2023 - MIT License
+### <a href="https://github.com/yusrmuttaqien">Yusril Muttaqien</a> - 2023
